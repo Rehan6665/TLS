@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Creating new user with subsciption"
+           tests="3"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="27.211">
+  <properties />
+  
+  
+            <testcase name="login" time="3.776" classname="tls_backend.EmbraceBackendB2B" />
+                <testcase name="addUserToSubsription" time="16.627" classname="tls_backend.EmbraceBackendB2B" />
+                <testcase name="createUser" time="6.808" classname="tls_backend.EmbraceBackendB2B" />
+      
+</testsuite>

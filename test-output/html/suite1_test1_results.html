@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="description" content="TestNG unit test results." />
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/reportngClass.css" rel="stylesheet" />
+  <script type="text/javascript" src="js/reportngClass.js"></script>
+  <script type="text/javascript" src="js/jquery-1.4.4.min.js"></script> 
+  <script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
+  <script type="text/javascript" src="js/json-min.js"></script>
+  <script type="text/javascript">
+	$(document).ready(function(){
+		$('.tablesorter').tablesorter({sortList: [[0,0]]});
+	});
+  </script>
+</head>
+<body onload="doParse(); return false;" onkeypress="collapseExpand();">
+<div class="well well-large">
+	<b>Test Info</>
+	<table class="table">
+	  <tr>
+	    <th>Test Name : </th>
+	    <th>
+	    	<div class="tooltipCustom">
+	    		<img src="images/copy.png" width="10" height="15" alt="Copy to Clipboard" onclick="copyToClipboard('#testNameId')"/>
+	    		<span class="tooltiptextCustom">Copy Test name</span>
+			</div>
+	    </th>
+	    <th id="testNameId">Creating new user with subsciption</th> 
+	  </tr>
+	  <tr>
+	    <th>Test Class : </th>
+	    <th>
+	    	<div class="tooltipCustom">
+	    		<img src="images/copy.png" width="10" height="15" alt="Copy to Clipboard" onclick="copyToClipboard('#testClassId')"/>
+	    		<span class="tooltiptextCustom">Copy full path Class name</span>
+			</div>
+	    	<div class="tooltipCustom">
+	    		<img src="images/copy.png" width="10" height="15" alt="Copy to Clipboard" onclick="copyToClipboard('#testClassNameId')"/>
+	    		<span class="tooltiptextCustom">Copy Class name</span>
+			</div>
+	    </th> 
+	    <th id="testClassId">tls_backend.EmbraceBackendB2B</th>
+	    <th id="testClassNameId" hidden="true">EmbraceBackendB2B</th>
+	  </tr>
+	  <tr>
+	    <th>Suite Name : </th>
+	    <th>
+	    	<div class="tooltipCustom">
+	    		<img src="images/copy.png" width="10" height="15" alt="Copy to Clipboard" onclick="copyToClipboard('#suiteNameId')"/>
+	    		<span class="tooltiptextCustom">Copy Suite name</span>
+			</div>
+		</th>
+	    <th id="suiteNameId">B2B-Embrace_UserCreation</th>
+	  </tr>
+	  <tr>
+	    <th>Suite XML : </th>
+	    <th>
+	    	<div class="tooltipCustom">
+	    		<img src="images/copy.png" width="10" height="15" alt="Copy to Clipboard" onclick="copyToClipboard('#suiteXMLId')"/>
+	    		<span class="tooltiptextCustom">Copy Suite full path name</span>
+			</div>
+	    	<div class="tooltipCustom">
+	    		<img src="images/copy.png" width="10" height="15" alt="Copy to Clipboard" onclick="copyToClipboard('#suiteXMLNameId')"/>
+	    		<span class="tooltiptextCustom">Copy Suite file name</span>
+			</div>
+	    </th> 
+	  	<th id="suiteXMLId">C:\Eclipse\TLS\testng.xml</th>
+	  	<th id="suiteXMLNameId" hidden="true">testng.xml</th>
+	  </tr>
+	  	  <tr>
+	    <th>Total Time : </th>
+	    <th></th>
+	    <th>00:00:27</th> 
+	  </tr>
+	  <tr>
+	    <th>Total Steps : </th>
+	   	<th></th>
+	    <th>3</th> 
+	  </tr>
+	  <tr>
+	    <th>Status : </th>
+	    <th></th>
+	    <th><font color="green">PASS</font></th> 
+	  </tr>
+	</table>
+</div>
+<div class="well well-large">
+	<div class="row">
+		<div class="col-xs-12">
+	        <div class="text-right">
+	            <button id="hideResults" type="button" class="btn-danger" onclick="collapseExpand(this);" onkeypress="collapseExpand(this);" class="btn pull-right" title="Click or Press Any key to collapse/expand All Failed Tests and Configuration Methods">Show Only Failures</button>
+	        </div>
+	    </div>
+	</div>
+	<table class="tablesorter" border="1">
+		<thead>
+		<tr>
+		<th class="headerTime">Time</th>
+		<th class="headerTime" width="12%">Info</th>
+		<th class="headerTime" width="88%">Test</th>
+		</tr>
+		</thead>
+		<tbody>
+		
+				
+				
+												
+				
+				
+												<tr>
+			<td class="time">1664473398629</td>
+			<td class="header passed" colspan="4" onClick="toggleElement('2ba9eece-93cc-4d4a-9bb2-8b7c25bc9ecd','block');changeSingleIcon('span-2ba9eece-93cc-4d4a-9bb2-8b7c25bc9ecd');" title="Click to expand/collapse" style="cursor: pointer;">
+			<div style="float:left;"><i>Class&nbsp;:&nbsp;</i>tls_backend.EmbraceBackendB2B</div>
+			<div style="float:right;">@Test @ with DataProvider : [""] &nbsp;&nbsp;<span id='span-2ba9eece-93cc-4d4a-9bb2-8b7c25bc9ecd' class="glyphicon glyphicon-menu-down"></span></div>
+			</td>
+			</tr>
+			<tr>
+	<td class="time">1664473398629</td>
+	<td class="methodTest">
+		<span class="description"><b>Method: </b>createUser</span><br>
+			<span class="description"><b>Description: </b>Create User</span><br>
+				<span class="description"><b>Priority: </b><font color='blue'>2</font></span><br>
+						<span class="duration"><b>Duration: </b>6.808s</span><br>
+	</td>
+	<td class="result">
+						<div class="stackTrace" id="2ba9eece-93cc-4d4a-9bb2-8b7c25bc9ecd" style="display: block;">
+												Creating user started<br>
+												Entering required data for user<br>
+												Entered all mandatory fields<br>
+												Created user Successfully
+												<br><a href="C:\Eclipse\TLS\test-output\Screenshots\createuser.png">Created user screenshot</a>
+								</td>
+	</div>
+</tr>
+						<tr>
+			<td class="time">1664473405441</td>
+			<td class="header passed" colspan="4" onClick="toggleElement('dd0e8200-c32c-47b3-bbec-9f6391b6c8a3','block');changeSingleIcon('span-dd0e8200-c32c-47b3-bbec-9f6391b6c8a3');" title="Click to expand/collapse" style="cursor: pointer;">
+			<div style="float:left;"><i>Class&nbsp;:&nbsp;</i>tls_backend.EmbraceBackendB2B</div>
+			<div style="float:right;">@Test @ with DataProvider : [""] &nbsp;&nbsp;<span id='span-dd0e8200-c32c-47b3-bbec-9f6391b6c8a3' class="glyphicon glyphicon-menu-down"></span></div>
+			</td>
+			</tr>
+			<tr>
+	<td class="time">1664473405441</td>
+	<td class="methodTest">
+		<span class="description"><b>Method: </b>addUserToSubsription</span><br>
+			<span class="description"><b>Description: </b>Linking user to the subscription</span><br>
+				<span class="description"><b>Priority: </b><font color='blue'>3</font></span><br>
+						<span class="duration"><b>Duration: </b>16.627s</span><br>
+	</td>
+	<td class="result">
+						<div class="stackTrace" id="dd0e8200-c32c-47b3-bbec-9f6391b6c8a3" style="display: block;">
+												Going to subscription page<br>
+												Assigning newly created user to the subscription<br>
+												Subsription assigned successfully
+								</td>
+	</div>
+</tr>
+						<tr>
+			<td class="time">1664473394845</td>
+			<td class="header passed" colspan="4" onClick="toggleElement('a45b8414-29b4-4de2-8280-b141c0eb46cb','block');changeSingleIcon('span-a45b8414-29b4-4de2-8280-b141c0eb46cb');" title="Click to expand/collapse" style="cursor: pointer;">
+			<div style="float:left;"><i>Class&nbsp;:&nbsp;</i>tls_backend.EmbraceBackendB2B</div>
+			<div style="float:right;">@Test @ with DataProvider : [""] &nbsp;&nbsp;<span id='span-a45b8414-29b4-4de2-8280-b141c0eb46cb' class="glyphicon glyphicon-menu-down"></span></div>
+			</td>
+			</tr>
+			<tr>
+	<td class="time">1664473394845</td>
+	<td class="methodTest">
+		<span class="description"><b>Method: </b>login</span><br>
+			<span class="description"><b>Description: </b>Login Test</span><br>
+				<span class="description"><b>Priority: </b><font color='blue'>1</font></span><br>
+						<span class="duration"><b>Duration: </b>3.776s</span><br>
+	</td>
+	<td class="result">
+						<div class="stackTrace" id="a45b8414-29b4-4de2-8280-b141c0eb46cb" style="display: block;">
+												Login started<br>
+												Logged in successfully<br>
+								</td>
+	</div>
+</tr>
+					  
+	</tbody>
+	</table>
+</div>
+</body>
+</html>
