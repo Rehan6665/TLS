@@ -13,8 +13,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.Reporter;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
@@ -23,13 +26,13 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class EmbraceBackendB2B {
 	
 	
-	    String firstName = "Himanshuu";
-		String lastName = "khush";
+	    String firstName = "Rockybhai";
+		String lastName = "kgf";
 		String subscriptionname = "Sahyadri Hospital Subscription(Don't Delete)";
 		String nursingHome = "Sahyadri Hospital";
-		String email = "Himanshuuu@gmail.com";
+		String email = "Himanshuuugmail.com";
 		String pass = "Mogamo@123";
-		String contactNumber = "+918987890987";
+		String contactNumber = "AAA";
 		String dob = "12-02-2001";
 		String gender ="Male";
 		String position = "Nurse";
@@ -37,25 +40,28 @@ public class EmbraceBackendB2B {
 		String state = "maharashtra";
 		String zipCode = "411028";
 		
-		public static WebDriver driver = null;
+		public static WebDriver driver=null;
 		
 	@BeforeSuite(description = "Open TLS backend in chrome")
 	public void launchBrowser()
 	{
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
-		driver.get("");
-		driver.manage().window().maximize();
 		
 	}
 	
 	@Test(priority = 1,description = "Login Test")
 	public void login()
 	{
+		
+		driver.get("https://tranquility-management.azurewebsites.net/");
+		driver.manage().window().maximize();
 		Reporter.log("Login started<br>");
 		driver.findElement(By.id("Email")).sendKeys("Admin@gmail.com");
 		driver.findElement(By.id("Password")).sendKeys("Admin@123");
 		driver.findElement(By.xpath("//*[@id=\"loginForm\"]/form/div[3]/div/input")).click();
+		String invalidLogin = driver.findElement(By.xpath("//*[@id=\"loginForm\"]/form/div[1]/ul/li")).getText();
+		Assert.assertEquals("actual_invalidLogin", invalidLogin);
 		Reporter.log("Logged in successfully<br>");
 		
 	}
@@ -94,7 +100,8 @@ public class EmbraceBackendB2B {
 		driver.findElement(By.xpath("//*[@id=\"PhoneNumber\"]")).sendKeys(contactNumber);
 		driver.findElement(By.xpath("//*[@id=\"DateOfBirth\"]")).sendKeys(dob);
 		
-	
+		
+		
 		
 		WebElement gender_dropDown =  driver.findElement(By.id("Gender"));
 		Select select_gdropDown = new Select(gender_dropDown);
@@ -138,22 +145,15 @@ public class EmbraceBackendB2B {
 		Reporter.log("Entered all mandatory fields<br>");
 		
 		driver.findElement(By.xpath("//*[@id=\"main-body\"]/form/div/div[25]/div/input")).click();
+		
+		
 		Reporter.log("Created user Successfully");
+	
 		
-		File src1 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		try {
-			FileUtils.copyFile(src1,new File("C:\\Eclipse\\TLS\\test-output\\Screenshots//createuser.png"));
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		Reporter.log("<br><a href=\"C:\\Eclipse\\TLS\\test-output\\Screenshots\\createuser.png\">Created user screenshot</a>");
-		System.setProperty("org.uncommons.reportng.escape-output","false");
 	}
 	
 	
-	@Test(priority = 3,description = "Linking user to the subscription")
+	@Test(priority = 3,description = "Linking user to the subscription",enabled = false)
 	public void addUserToSubsription()
 	{
 		Reporter.log("Going to subscription page<br>");
@@ -177,6 +177,7 @@ public class EmbraceBackendB2B {
 		driver.findElement(By.xpath("//*[@id=\"main-body\"]/div[3]/div[2]/div/div[1]/a"));
 		Reporter.log("Subsription assigned successfully");
 		
+		
 	}
 	
 	@AfterSuite(description = "Closing the browser")
@@ -188,3 +189,4 @@ public class EmbraceBackendB2B {
 	
 
 }
+
