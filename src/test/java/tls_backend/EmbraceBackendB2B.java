@@ -54,7 +54,7 @@ public class EmbraceBackendB2B {
 	public void login()
 	{
 		
-		driver.get("https://tranquility-management.azurewebsites.net/");
+		driver.get("");
 		driver.manage().window().maximize();
 		Reporter.log("Login started<br>");
 		driver.findElement(By.id("Email")).sendKeys("Admin@gmail.com");
